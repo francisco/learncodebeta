@@ -9,7 +9,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="row full-height">
+    <div class="col-md-3 full-height">
+      <div class="sidebar affix">
+        <a href="/"><div class='logo-container'>
+          <i class="fa fa-map-marker"></i>
+          <h1>learncode</h1>
+        </div></a>
+        <div class="links text-center">
+          <ul class="link">
+            <a href="/quotes"><li><i class="fa fa-lightbulb-o"></i> Step 1: Get Inspired<br> <span class="small-text">Quotes from leading developers to inspire you</span></li></a>
+            <hr>
+            <a href="/online_schools"><li><i class="fa fa-pencil"></i> Step 2: Self Study<br> <span class="small-text">Resources to learn code on your own</span></li></a>
+            <hr>
+            <li><i class="fa fa-rocket"></i> Step 3: Get Real Training<br> <span class="small-text">Find a school where you can to learn to code</span></li>
+          </ul>
+        <form action="/offline_schools/new" method="get">
+          <div class="input-group">
+            <input class="form-control" type="text" name="search_term" placeholder="Where do you live?">
+            <span class="input-group-btn">
+              <button class="btn btn-primary">Submit</button>
+            </span>
+          </div>
+        </form>
+        <hr>
+      </div>
+    <div class="footer">Are you a developer? <br> <a href="/quotes/new">Leave some words of wisdom</a></div>
+  </div>
 
 <%= yield %>
 
