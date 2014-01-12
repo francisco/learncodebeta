@@ -4,40 +4,58 @@
   <title>Learncodebeta</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css"/>
-  <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="row full-height">
-    <div class="col-md-3 full-height">
-      <div class="sidebar affix">
-        <a href="/"><div class='logo-container'>
-          <i class="fa fa-map-marker"></i>
-          <h1>learncode</h1>
-        </div></a>
-        <div class="links text-center">
-          <ul class="link">
-            <a href="/quotes"><li><i class="fa fa-lightbulb-o"></i> Step 1: Get Inspired<br> <span class="small-text">Quotes from leading developers to inspire you</span></li></a>
-            <hr>
-            <a href="/online_schools"><li><i class="fa fa-pencil"></i> Step 2: Self Study<br> <span class="small-text">Resources to learn code on your own</span></li></a>
-            <hr>
-            <li><i class="fa fa-rocket"></i> Step 3: Get Real Training<br> <span class="small-text">Find a school where you can to learn to code</span></li>
-          </ul>
-        <form action="/offline_schools/new" method="get">
-          <div class="input-group">
-            <input class="form-control" type="text" name="search_term" placeholder="Where do you live?">
-            <span class="input-group-btn">
-              <button class="btn btn-primary">Submit</button>
-            </span>
+  <div class="row full-height">
+    <div class="col-md-3">
+      <div class="left-nav">
+        <a href="/">
+          <div class='logo-container text-center'>
+            <i class="fa fa-map-marker"></i>
+            <h1>learncode</h1>
           </div>
-        </form>
-        <hr>
+        </a>
+        <ul class="mynav">
+          <li>
+            <a href="/quotes">
+              <i class="fa fa-lightbulb-o"></i> Step 1: Get Inspired<br>
+              <div class="small-text">Quotes from leading developers to inspire you</div>
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="/onlineschools">
+              <i class="fa fa-pencil"></i> Step 2: Self Study<br>
+              <div class="small-text">Resources to learn code on your own</div>
+            </a>
+          </li>
+          <hr>
+          <li>
+            <i class="fa fa-rocket"></i> Step 3: Get Real Training<br> <div class="small-text">Learn to code in a classroom</div>
+              <div class="input-group navsearch">
+                <input class="form-control" type="text" name="search_term" placeholder="Where do you live?">
+                <div class="input-group-btn">
+                  <button class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </form>
+          </li>
+          <hr>
+          <li>
+            <div class="small-text">
+              <a href="/quotes/new">Are you a developer? <br> Leave some words of wisdom</a>
+            </div>
+          </li>
+        </ul>
       </div>
-    <div class="footer">Are you a developer? <br> <a href="/quotes/new">Leave some words of wisdom</a></div>
+    </div>
+    <div class="col-md-9 fullmap">
+      <%= yield %>
+    </div>
   </div>
-
-<%= yield %>
 
 </body>
 </html>
