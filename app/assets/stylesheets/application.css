@@ -9,8 +9,90 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap.min.css
- *= require bootstrap-formhelpers.min.css
- *= require font-awesome.min.css
+ *= require font-awesome
  *= require_self
  *= require_tree .
  */
+
+@import url(http://fonts.googleapis.com/css?family=Allerta);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+html, body { height: 100%;}
+
+.full-height { height: 100%;}
+
+.logo-container {
+  border: 1px solid white;
+  font-size: 45px;
+  margin: auto;
+  color: #fff;
+  font-family: lato, Helvetica, sans-serif;
+  line-height: 10px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  width: 75%;
+}
+
+.col-md-3 {
+  background: #34495e;
+  font-family: lato, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 18px;
+  height: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.left-nav {
+  padding-top: 15px;
+  padding-left: 11px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.mynav {
+  width: 83%;
+  margin: 0 auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  list-style-type: none;
+}
+
+.mynav li {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.navsearch {
+  margin-top: 10px;
+}
+
+.fullmap {
+  padding-left: 0px;
+  height: 100%;
+  z-index: 0px;
+}
+
+#map {
+  height: 100%;
+}
