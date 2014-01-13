@@ -13,7 +13,7 @@ task :api_schools => :environment do
     description = school["description"]
     languages = school["languages"]
     contact_email = school["contact_email"]
-    contact_number = school["contact_number"]
+    phone = school["contact_number"]
     street = school["street"]
     city = school["city"]
     state = school["state"]
@@ -22,7 +22,7 @@ task :api_schools => :environment do
     latitude = school["latitude"]
     longitude = school["longitude"]
     OfflineSchool.create(languages: languages, contact_email: contact_email,
-      contact_number: contact_number, bio: description, city: city,
+      phone: phone, bio: description, city: city,
       ed_level: levels, format: format_description, name: name,
       site_url: website, state: state, zip_code: zip, street: street,
       latitude: latitude, longitude: longitude)
