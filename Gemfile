@@ -9,6 +9,7 @@ gem 'pg'
 gem 'font-awesome-rails'
 gem 'json'
 gem 'typhoeus'
+gem 'geocoder'
 
 
 # Gems used only for assets and not required

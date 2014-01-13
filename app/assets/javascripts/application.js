@@ -18,6 +18,7 @@
 
 $(document).ready(function() {
   event.preventDefault();
+  var school_group = new L.LayerGroup();
   var map = L.map('map', {
     center:[37.7749295,-122.4194155],
     zoom: 11,
@@ -33,12 +34,13 @@ $(document).ready(function() {
 
   $('#submit_search').click(function(){
     var address_search = $('#address_search').val();
-    updateMap(map, address_search);
+    console.log(school_group);
+    updateMap(map, school_group, address_search);
   });
-  createMap(map);
+  createMap(map, school_group);
 });
 
-var updateMap = function(map, address_search){
+var updateMap = function(map, school_group, address_search){
   $.ajax({
     type: "GET",
     url: "/offline_schools.json?address_search=" + address_search
@@ -46,22 +48,38 @@ var updateMap = function(map, address_search){
     var lat = data.lat;
     var lng = data.lng;
     map.setView(new L.LatLng(lat, lng));
+    var school_data = data.offline_schools;
+    for (var i = 0; i < school_data.length; i++) {
+      if (school_data[i]["name"]) {
+        L.marker([school_data[i].latitude,school_data[i].longitude])
+        .openPopup('click').bindPopup(
+          "<strong>" + school_data[i]["name"] + "</strong>" + "<br>"
+          + school_data[i]["street"] + "<br>" + school_data[i]["bio"]
+        ).addTo(school_group);
+      }
+    };
+    var overlays = {
+      "school_group": school_group
+    };
+    L.control.layers(overlays).addTo(map);
   });
 };
 
-var createMap = function(map){
-  var address_search = address_search;
-  var school_group = new L.LayerGroup();
+var createMap = function(map, school_group){
   $.ajax({
     type: "GET",
-    url: "/offline_schools.json"
+    url: "/offline_schools.json?address_search=san+francisco+ca"
   }).done(function (data) {
-    for (var i = 0; i < data.length; i++) {
-      L.marker([data[i].latitude,data[i].longitude])
-      .openPopup('click').bindPopup(
-        "<strong>" + data[i]["name"] + "</strong>" + "<br>"
-        + data[i]["street"] + "<br>" + data[i]["bio"]
-      ).addTo(school_group);
+    console.log(data);
+    var school_data = data.offline_schools
+    for (var i = 0; i < school_data.length; i++) {
+      if (school_data[i]["name"]) {
+        L.marker([school_data[i].latitude,school_data[i].longitude])
+        .openPopup('click').bindPopup(
+          "<strong>" + school_data[i]["name"] + "</strong>" + "<br>"
+          + school_data[i]["street"] + "<br>" + school_data[i]["bio"]
+        ).addTo(school_group);
+      }
     }
     var overlays = {
       "school_group": school_group
