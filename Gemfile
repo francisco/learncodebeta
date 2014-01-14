@@ -10,7 +10,7 @@ gem 'font-awesome-rails'
 gem 'json'
 gem 'typhoeus'
 gem 'geocoder'
-
+gem 'seed_dump'
 
 # Gems used only for assets and not required
 # in production environments by default.
