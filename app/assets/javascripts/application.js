@@ -26,7 +26,7 @@ $(document).ready(function() {
   });
 
   L.tileLayer('http://{s}.tile.cloudmade.com/f6c127adc91a47f1b4a73837013ed783/998/256/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+    attribution: 'Schools Data <a href="http://code.org">Code.org</a> | Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
     maxZoom: 18,
     minZoom: 1,
     maxBounds: [[-85, -180], [85, 180]]
