@@ -1,4 +1,4 @@
-== Welcome to LearnCode Beta (The alpha version can be found <a href="https://github.com/francisco/codemapsalpha">here</a>)
+### Welcome to LearnCode Beta (The alpha version can be found [here](https://github.com/francisco/codemapsalpha))
 
 Learncode is a site where aspiring developers can go through the process of learning to code.
 
@@ -9,4 +9,4 @@ Step 3: Find training with an interactive map of local schools where one can lea
 Technologies Used: Ruby on Rails, JavaScript, PostgreSQL, Leaflet Maps, Code.org Local School Database, Bootstrap
 
 Here's a Blog Post I wrote about the project.
-<a href="http://francisco.github.io/blog/2013/11/10/learncode-my-first-project-as-a-web-developer/">Learncode: My First Project as a Web Developer</a>
+[Learncode: My First Project as a Web Developer](http://francisco.github.io/blog/2013/11/10/learncode-my-first-project-as-a-web-developer/)
