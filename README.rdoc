@@ -1,4 +1,4 @@
-== Welcome LearnCode
+== Welcome to LearnCode Beta (The alpha version can be found [here](https://github.com/francisco/codemapsalpha)
 
 Learncode is a site where aspiring developers can go through the process of learning to code.
 
