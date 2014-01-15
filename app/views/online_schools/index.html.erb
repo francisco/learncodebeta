@@ -1,0 +1,22 @@
+<h1><%= link_to "Add a new online school", new_online_school_path %></h1>
+<div class="container">
+	<% @onlineschools.each do |onlineschool| %>
+		<div class="row">
+			<div class="col-md-8">
+			  <div class="panel panel-default left-col">
+			    <div class="panel-heading">
+			      <div class="author-bio">
+			      	Name: <%= onlineschool.name %><br>	
+			      	<a href="<%= onlineschool.site_url %>">Website</a><br>	
+			        Languages: <%= onlineschool.languages %><br>
+			        Pricing: <%= onlineschool.pricing %><br>	
+			      </div>
+			    </div>
+			    <div class="panel-body">
+				  	Description: <%= onlineschool.bio %>
+				  </div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

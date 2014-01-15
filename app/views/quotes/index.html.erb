@@ -1,0 +1,25 @@
+<h1>Anyone can code:</h1>
+<div class="quotes-description">Contrary to popular belief, being a successful programmer doesn't require a full computer science degree. In fact, programmers come from all walks of life.</div>
+
+<div class="container">
+<% @quotes.each do |quote| %>
+		<div class="row">
+			<div class="col-md-11">
+			  <div class="panel panel-default left-col">
+			    <div class="panel-heading">
+			      <img src='<%= quote.picture %>' class="image pull-right">
+			      <div class="author-bio">
+			      	Name: <%= quote.author %><br>	
+			      	Title: <%= quote.position %><br>	
+			        Company: <%= quote.employer %><br>
+			        Years Programming: <%= quote.years_programming %><br>	
+			      </div>
+			    </div>
+			    <div class="panel-body">
+				  	<%= quote.advice %> 
+				  </div>
+				</div>
+			</div>
+		</div>	
+<% end %>
+</div>

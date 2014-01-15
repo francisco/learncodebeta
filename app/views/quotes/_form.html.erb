@@ -1,0 +1,17 @@
+<%= form_for @quote do |f| %>	
+	Name: <br>
+	<%= f.text_field :author, class: "form-group", placeholder: "Enter name" %><br>
+	Employer: <br>
+	<%= f.text_field :employer, class: "form-group", placeholder: "Enter employer" %><br>
+	Position: <br>
+	<%= f.text_field :position, class: "form-group", placeholder: "Enter position" %><br>
+	Education: <br>
+	<%= f.text_field :education, class: "form-group", placeholder: "Enter Education" %><br>
+	Years Programming: <br>
+	<%= f.text_field :years_programming, class: "form-group", placeholder: "Enter years programming" %><br>
+	Picture: <br>
+	<%= f.text_field :picture, class: "form-group", placeholder: "Enter picture URL" %><br>
+	Words of Wisdom: <br>
+	<%= f.text_field :advice, class: "form-group", size: "50x10" %><br>
+	<%= f.submit %>
+<% end %>
